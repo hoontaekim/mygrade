@@ -1,0 +1,924 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>광운대학교 종합정보서비스</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+    <link rel="shortcut icon" href="/images/kw_favicon.ico">
+    <link href="/style/style.css" rel="stylesheet" type="text/css">
+    <script language="javascript">
+        function MM_swapImgRestore() { //v3.0
+            var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+
+        /*
+        function MM_preloadImages() { //v3.0
+          var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+            var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+            if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+        }
+        */
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2) ; i += 3)
+                if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+        }
+
+
+
+
+
+
+
+
+
+        // 좌측메뉴 슬라이딩 - 예전 소스
+        function slide_old(Id, interval, to) {
+            var obj = document.getElementById(Id);
+            var H, step = 1000;
+
+            if (obj == null) {
+                return;
+            }
+
+            if (to == undefined) { // user clicking
+                if (obj._slideStart == true) {
+                    return;
+                }
+
+                if (obj._expand == true) {
+                    to = 0;
+                    obj.style.overflow = "hidden";
+                }
+                else {
+                    slide.addId(Id);
+                    for (var i = 0; i < slide.objects.length; i++) {
+                        if (slide.objects[i].id != Id && slide.objects[i]._expand == true) {
+                            slide(slide.objects[i].id);
+                        }
+                    }
+
+                    obj.style.height = "";
+                    obj.style.overflow = "";
+                    obj.style.display = "block";
+                    to = obj.offsetHeight;
+                    obj.style.overflow = "hidden";
+                    obj.style.height = "1px";
+                }
+                obj._slideStart = true;
+            }
+
+            step = ((to > 0) ? 1 : -1) * step;
+
+            interval = ((interval == undefined) ? 1 : interval);
+            //obj.style.height = (H=((H=(isNaN(H=parseInt(obj.style.height))?0:H))+step<0)?0:H+step)+"px";
+
+            H = parseInt(obj.style.height);
+            H = isNaN(H) ? 0 : H;
+            H = (H + step < 0) ? 0 : H + step;
+            H = (H > to) ? to : H;
+            obj.style.height = H + "px";
+
+            if (H <= 0) {
+                obj.style.display = "none";
+                obj.style.overflow = "hidden";
+                obj._expand = false;
+                obj._slideStart = false;
+            }
+            else if (to > 0 && H >= to) {
+                obj.style.display = "block";
+                obj.style.overflow = "visible";
+                obj.style.height = H + "px";
+                obj._expand = true;
+                obj._slideStart = false;
+            }
+            else {
+                setTimeout("slide('" + Id + "' , " + interval + ", " + to + ");", interval);
+            }
+        }
+
+
+
+
+
+        // 좌측메뉴 슬라이딩 - 2007.12.28 수정
+        function slide(Id, interval, to) {
+            var obj = document.getElementById(Id);
+            var H, step = 1000;
+
+            if (obj == null) {
+                return;
+            }
+
+            if (to == undefined) { // user clicking
+                if (obj._slideStart) {
+                    return;
+                }
+
+                if (obj._expand) {
+                    to = 0;
+                    obj.style.display = "none";
+                    obj.style.overflow = "hidden";
+                }
+                else {
+                    slide.addId(Id);
+                    for (var i = 0; i < slide.objects.length; i++) {
+                        if (slide.objects[i].id != Id && slide.objects[i]._expand) {
+                            slide(slide.objects[i].id);
+                        }
+                    }
+
+                    obj.style.height = "";
+                    obj.style.overflow = "";
+                    obj.style.display = "block";
+                    to = obj.offsetHeight;
+                    obj.style.overflow = "hidden";
+                    obj.style.height = "1px";
+                }
+                obj._slideStart = true;
+            }
+
+            step = ((to > 0) ? 1 : -1) * step;
+
+            interval = (interval == undefined) ? 1 : interval;
+            //obj.style.height = (H=((H=(isNaN(H=parseInt(obj.style.height))?0:H))+step<0)?0:H+step)+"px";
+
+            H = parseInt(obj.style.height);
+            H = isNaN(H) ? 0 : H;
+            H = (H + step < 0) ? 0 : H + step;
+            H = (H > to) ? to : H;
+
+            obj.style.height = H + "px";
+
+            if (H <= 0) {
+                obj.style.display = "none";
+                obj.style.overflow = "hidden";
+                obj._expand = false;
+                obj._slideStart = false;
+            }
+            else {
+                //obj.style.display = "block";
+                obj.style.display = "";
+                obj.style.overflow = "visible";
+                //obj.style.height = H + "px";
+                obj._expand = true;
+                obj._slideStart = false;
+            }
+
+            if (interval == 1 && to == 1) {
+                slide.addId(Id);
+            }
+        }
+
+        slide.objects = new Array();
+
+        slide.addId = function (Id) {
+            for (var i = 0; i < slide.objects.length; i++) {
+                if (slide.objects[i].id == Id) {
+                    return true;
+                }
+            }
+            slide.objects[slide.objects.length] = document.getElementById(Id);
+        }
+
+
+        // 좌측메뉴 초기화 - 2007.08.21
+        function initLeftMenu(main_menu, sub_menu) {
+            //slide("leftSub_" + main_menu);
+            slide("leftSub_" + main_menu, 1, 1);
+
+            if (sub_menu != "" && sub_menu != "00") {
+                obj = document.getElementById("leftSub_" + main_menu + "_" + sub_menu);
+            }
+            else {
+                obj = document.getElementById("leftMain_" + main_menu);
+            }
+
+            if (obj != null) {
+                obj.style.color = "#CC6600";
+            }
+        }
+
+
+        // 좌측메뉴 초기화(POMS 전용) - 2007.08.21
+        function initLeftMenu_POMS(main_menu, sub_menu) {
+            //slide("leftSub_" + main_menu);
+            slide("leftSub_" + main_menu, 1, 1);
+
+            if (sub_menu != "" && sub_menu != "00") {
+                obj = document.getElementById("leftSub_" + main_menu + "_" + sub_menu);
+                obj_parent = document.getElementById("leftMain_" + main_menu);
+
+                obj.src = obj.src_on;
+                obj.src_out = obj.src_on;
+                obj_parent.src = obj_parent.src_on;
+                obj_parent.src_out = obj_parent.src_on;
+            }
+            else if (main_menu != "" && main_menu != "00") {
+                obj = document.getElementById("leftMain_" + main_menu);
+                obj.src = obj.src_on;
+            }
+        }
+
+
+        // 문자열 길이를 byte단위로 구함 - 한글 한자는 2byte로 계산
+        function strlen(str) {
+            var len = str.length;
+            var han = 0;
+            var res = 0;
+
+            for (i = 0; i < len; i++) {
+                var a = str.charCodeAt(i);
+                if (a > 128)
+                    han++;
+            }
+            res = (len - han) + (han * 2);
+
+            return res;
+        }
+
+
+
+        // flashWrite(파일경로, 가로, 세로, 아이디, 배경색, 윈도우모드)
+        function flashWrite(url, w, h, id, bg, win) {
+            // 플래시 코드 정의
+            var flashStr =
+            "<object classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0' width='" + w + "' height='" + h + "' id='" + id + "' align='middle'>" +
+            "<param name='movie' value='" + url + "' />" +
+            "<param name='wmode' value='" + win + "' />" +
+            "<param name='menu' value='false' />" +
+            "<param name='quality' value='high' />" +
+            "<param name='bgcolor' value='" + bg + "' />" +
+            "<embed src='" + url + "' wmode='" + win + "' menu='false' quality='high' bgcolor='" + bg + "' width='" + w + "' height='" + h + "' name='" + id + "' align='middle' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' />" +
+            "</object>";
+
+            // 플래시 코드 출력
+            document.write(flashStr);
+        }
+
+
+
+        // 크레듀 My Blog 창 띄우기
+        function goCreduMyBlog(c_gubun_code) {
+            var strUrl = "http://info2.kw.ac.kr/servlet/controller.eportfolio.MainServlet?p_userid=12007006&p_gubun_code=" + c_gubun_code;
+            window.open(strUrl, "openPortfolio", "toolbar=yes,location=yes,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no, width = 1024, height = 768, top=50, left=50");
+        }
+
+
+
+        // 크레듀 일정/쪽지 페이지 이동
+        function goCreduSchedule(c_gubun_code, p_kwLoginType) {
+            var strUrl = "http://info2.kw.ac.kr/servlet/controller.homepage.MainServlet?p_gate=univ&p_process=main&p_page=myinfo&p_kwLoginType=" + p_kwLoginType + "&gubun_code=" + c_gubun_code;
+            location.href = strUrl;
+        }
+
+
+
+
+        // 팝업 띄우기
+        function open_popup(w_url, w_name, w_width, w_height, w_align, w_scroll) {
+            var w_left;
+            var w_top;
+
+            switch (w_align) {
+                // 좌측 상단
+                case "topleft":
+                case "lefttop":
+                case "tl":
+                case "lt":
+                    w_left = 0;
+                    w_top = 0;
+                    break;
+
+                    // 우측 상단
+                case "topright":
+                case "righttop":
+                case "tr":
+                case "rt":
+                    w_left = screen.width - w_width;
+                    w_top = 0;
+                    break;
+
+                    // 좌측 하단
+                case "bottomleft":
+                case "leftbottom":
+                case "bl":
+                case "lb":
+                    w_left = 0;
+                    w_top = screen.height - w_height - 80;
+                    break;
+
+                    // 우측 하단
+                case "bottomright":
+                case "rightbottom":
+                case "br":
+                case "rb":
+                    w_left = screen.width - w_width - 80;
+                    w_top = screen.height - w_height - 80;
+                    break;
+
+                    // 중앙 - 기본값
+                case "center":
+                case "c":
+                default:
+                    w_left = (screen.width - w_width) / 2;
+                    w_top = (screen.height - w_height) / 2;
+                    break;
+            }
+
+            var w_option = "width=" + w_width + ",height=" + w_height + ",left=" + w_left + ",top=" + w_top;
+
+            // 스크롤바 유무 설정
+            if (w_scroll == "Y" || w_scroll == "y") {
+                w_option = w_option + ",scrollbars=yes";
+            }
+
+            return window.open(w_url, w_name, w_option);
+        }
+
+
+
+        // 로그인 팝업 띄우기
+        function open_login(redirect_url) {
+            open_popup("/webnote/login/login1.php?redirect_url=" + redirect_url, "win_login", 300, 167, "c");
+        }
+
+
+        // 인증서 로그인 팝업 띄우기
+        function open_pki_login(redirect_url, gubun_code, member_no) {
+            // 사용자 구분 인자가 설정되지 않은 경우 "" 로 초기화
+            if (typeof (gubun_code) == "undefined") {
+                gubun_code = "";
+            }
+
+            // 개인번호 인자가 설정되지 않은 경우 "" 로 초기화
+            if (typeof (member_no) == "undefined") {
+                member_no = "";
+            }
+            open_popup("/webnote/login/pki_login.php?redirect_url=" + redirect_url + "&gubun_code=" + gubun_code + "&member_no=" + member_no, "win_pki_login", 600, 520, "c");
+        }
+
+
+        // 인증서 등록 팝업 띄우기
+        function open_pki_register(redirect_url, gubun_code, member_no) {
+            // 사용자 구분 인자가 설정되지 않은 경우 "" 로 초기화
+            if (typeof (gubun_code) == "undefined") {
+                gubun_code = "";
+            }
+
+            // 개인번호 인자가 설정되지 않은 경우 "" 로 초기화
+            if (typeof (member_no) == "undefined") {
+                member_no = "";
+            }
+            open_popup("/webnote/login/pki_login.php?act_opt=register&redirect_url=" + redirect_url + "&gubun_code=" + gubun_code + "&member_no=" + member_no, "win_pki_login", 600, 520, "c");
+        }
+    </script>
+
+    <script type="text/javascript">
+
+<!--
+// 외부 iframe 자동 리사이즈
+var ifrContentsTimer;
+
+// 이미지 등 로딩시간이 걸리는 것들이 로딩된 후 다시 한번 리사이즈
+function resizeRetry(){
+  if(document.body.readyState == "complete"){
+    clearInterval(ifrContentsTimer);
+  }
+  else{
+    resizeFrame();
+  }
+}
+
+// 페이지가 로딩되면 바로 리사이즈
+function resizeFrame(){
+  self.resizeTo(document.body.scrollWidth + (document.body.offsetWidth-document.body.clientWidth), parseInt(document.body.scrollHeight)+10);
+}
+
+window.onload = function(){
+  resizeFrame();
+  ifrContentsTimer = setInterval("resizeRetry()", 100);
+}
+
+function print_open(){
+    window.open("sungjuk_hakbu_print.php", "calwin", "width=700, resizable=yes, scrollbars=yes");
+  }
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+
+    </script>
+
+
+</head>
+
+<body leftmargin="0" topmargin="0">
+
+
+    <!-- 본문시작 -->
+    <!-- 학적사항 출력 -->
+    <table width=750 align='center' border=0>
+        <tr>
+            <td>
+                <img src="https://info.kw.ac.kr/webnote/images/s_title_07.gif" width='750' height='32'>
+    </table><br>
+
+    <table width=750 align='center' border=1 cellpadding='3' cellspacing=0 bordercolorlight='#CCCCCC' bordercolordark='#FFFFFF'>
+        <colgroup>
+            <col width='50' />
+            <col width='180' />
+            <col width='100' />
+            <col width='120' />
+            <col width='120' />
+            <col width='180' />
+        </colgroup>
+        <tr class='bgtable1' align=center height=30 bgcolor="#CCCCCC">
+            <th>구분</th>
+            <th>학과/학부</th>
+            <th>학번</th>
+            <th>이름</th>
+            <th>학적상황</th>
+            <th>지도교수</th>
+        <tr align=center bgcolor='#FFFFFF' height=30>
+            <td>학부</td>
+            <td>소프트웨어학부 응용소프트웨어전공</td>
+            <td>2018203008</td>
+            <td>김태훈</td>
+            <td>2학년 재학</td>
+            <td>임재한<br><a href="mailto:ljhar@kw.ac.kr">ljhar@kw.ac.kr</a></td>
+    </table>
+
+    <!-- 프로그램 이수정보 표시 - 학부생 전용 -->
+    <!-- 공학인증프로그램 사용자 UI 개선 sycho 2013.07.08 공학교육혁신센터2013-093 -->
+    <br />
+    <table width=750 align='center' border=1 cellpadding='3' cellspacing=0 bordercolorlight='#CCCCCC' bordercolordark='#FFFFFF'>
+        <tr height=30>
+            <th class='bgtable1' width="20%" bgcolor="#CCCCCC">프로그램(학위과정)</th>
+            <td width="20%" align="center">전문</td>
+            <!--<th class='bgtable1'>영문명</th><td>Computer Science and Engineering Program</td>-->
+            <th class='bgtable1' width="30%" bgcolor="#CCCCCC">공학프로그램이수현황 점검</th>
+            <td align="center">
+                <!-- 관련 안내문 팝업 추가 sycho 2013.07.22 공학교육혁신센터2013-176호
+                <input type='button' value='예비점검표' onclick="javascript:MM_openBrWindow('/webnote/abeek/graduate_evaluation_new2.php?hakbun=2018203008&cert_name=전문','','width=700, resizable=yes, scrollbars=yes')">
+                -->
+                <input type='button' value='예비점검표' onclick="javascript: MM_openBrWindow('https://info.kw.ac.kr/webnote/sungjuk/confirm_abeek.php', '예비점검표', 'width=550,height=480, resizable=no, scrollbars=no')">
+            </td>
+        </tr>
+    </table>
+
+
+
+
+    <!-- 신청/취득학점 -->
+
+    <br>
+    <!-- 신청학점, 삭제학점, 취득학점, 평량평균 조회 추가 sycho 2015.04.20 교육지원팀 2015-226
+    <table width=750 align='center' border=1 cellpadding='3' cellspacing=0 bordercolorlight='#CCCCCC' bordercolordark='#FFFFFF'>
+      <tr align=center height=30>
+        <th width=20% class='bgtable1'>신청학점</th>
+        <td width=30% align=center bgcolor='#FFFFFF'>52</td>
+        <th width=20% class='bgtable1'>취득학점</th>
+        <td width=30% align=center bgcolor='#FFFFFF'>35</td>
+      </tr>
+    </table>
+    -->
+    <table width=750 align='center' border=1 cellpadding='3' cellspacing=0 bordercolorlight='#CCCCCC' bordercolordark='#FFFFFF'>
+        <tr align=center height=30 bgcolor="#CCCCCC">
+            <th class='bgtable1' colspan='4'>1) 신청학점</th>
+            <th class='bgtable1' colspan='4'>2) 삭제학점</th>
+            <th class='bgtable1' colspan='4'>3) 취득학점</th>
+            <th class='bgtable1' colspan='2'>평량평균</th>
+            <th class='bgtable1'>6)연도/학과별<br />졸업이수학점</th>
+        </tr>
+        <tr align=center height=30 bgcolor="#CCCCCC">
+            <th class='bgtable1'>전공</th>
+            <th class='bgtable1'>교양</th>
+            <th class='bgtable1'>기타</th>
+            <th class='bgtable1'>계</th>
+            <th class='bgtable1'>전공</th>
+            <th class='bgtable1'>교양</th>
+            <th class='bgtable1'>기타</th>
+            <th class='bgtable1'>계</th>
+            <th class='bgtable1'>전공</th>
+            <th class='bgtable1'>교양</th>
+            <th class='bgtable1'>기타</th>
+            <th class='bgtable1'>계</th>
+            <th class='bgtable1'>4)학적부<br />기준</th>
+            <th class='bgtable1'>5)성적증명서<br />기준</th>
+            <td class='bgtable1' rowspan='2'>
+                <input type='button' value='조회' onclick="javascript: MM_openBrWindow('https://info.kw.ac.kr/webnote/sungjuk/sungjuk_info.html', '졸업이수학점', 'width=750,height=950, resizable=yes, scrollbars=yes')">
+            </td>
+        </tr>
+        <tr align=center height=30>
+            <td width='5%' align=center bgcolor='#FFFFFF'>8<br />(0)</td>
+            <td width='5%' align=center bgcolor='#FFFFFF'>26<br />(0)</td>
+            <td width='5%' align=center bgcolor='#FFFFFF'>18<br />(0)</td>
+            <td width='6%' align=center bgcolor='#FFFFFF'>52<br />(0)</td>
+            <td width='5%' align=center bgcolor='#FFFFFF'>0</td>
+            <td width='5%' align=center bgcolor='#FFFFFF'>0</td>
+            <td width='5%' align=center bgcolor='#FFFFFF'>0</td>
+            <td width='6%' align=center bgcolor='#FFFFFF'>0</td>
+            <td width='5%' align=center bgcolor='#FFFFFF'>8<br />(0)</td>
+            <td width='5%' align=center bgcolor='#FFFFFF'>26<br />(0)</td>
+            <td width='5%' align=center bgcolor='#FFFFFF'>15<br />(0)</td>
+            <td width='6%' align=center bgcolor='#FFFFFF'>49<br />(0)</td>
+            <td width='10%' align=center bgcolor='#FFFFFF'><u>3.32</u></td>
+            <td width='12%' align=center bgcolor='#FFFFFF'><u>3.47</u></td>
+        </tr>
+    </table>
+
+    <table width='750' align='center' cellspacing='0'>
+        <tr height='20'><td><font color="#FF0000">※ () 안의 학점은 재수강 학점임</font></td></tr>
+        <tr height='20'><td><font color="#FF0000">※ 기타 : 교직, 복수전공, 부전공, 일반선택 학점 등</font></td></tr>
+    </table>
+
+    <br>
+
+    <table width='750' align='center' cellspacing='0'>
+        <tr height='20'><td><b>1) 신청학점 : <font color="#FF0000">성적처리가 마감된 과목의 학점에 한해서만 합산</font><font color="#0000FF">(F학점, 삭제학점, 재수강으로 인한 삭제학점 <u>포함</u>)</font></b></td></tr>
+        <tr height='20'><td><b>2) 삭제학점 : <font color="#FF0000">학점삭제제도로 인한 삭제학점 + 재수강으로 인한 삭제 학점</font></b></td></tr>
+        <tr height='20'><td><b>3) 취득학점 : <font color="#FF0000">성적처리가 마감된 과목의 학점에 한해서만 합산</font><font color="#0000FF">(F학점, 삭제학점, 재수강으로 인한 삭제학점 <u>미포함</u>)</font></b></td></tr>
+        <tr height='20'><td><b>4) (학적부 기준) 평량평균 : <font color="#0000FF">신청학점</font></b>에 대한 평량평균</td></tr>
+        <tr height='20'><td><b>5) (성적증명서 기준) 평량평균 : <font color="#0000FF">취득학점</font></b>에 대한 평량평균</td></tr>
+        <tr height='20'><td>6) 연도/학과별 졸업이수학점 : 입학연도 및 각 학과별 졸업이수 학점</td></tr>
+    </table>
+
+    <br>
+
+    <table width='750' align='center' cellspacing='0'>
+        <tr height='20'><td><b><u><font color="#FF0000">※ 상기 산출자료는 단순 참고용이므로 정확한 이수 학점 및 평량평균은 성적증명서 발급을 통하여 확인하시기 바랍니다 ※</font></u></b></td></tr>
+    </table>
+
+    <br>
+    <br>
+
+
+
+    <table width=750 align='center' border=0>
+        <tr>
+            <td><img src="https://info.kw.ac.kr/webnote/images/s_title_sub_10.gif"></td>
+            <td align=right>
+                <img src="https://info.kw.ac.kr/webnote/images/ball.gif" width=18 height=11><a href='/webnote/class_order/order.php?layout_opt=N'><strong>석차조회</strong></a> &nbsp;
+                <img src="https://info.kw.ac.kr/webnote/images/ball.gif" width=18 height=11><a href='/webnote/toeic/toeic.php?layout_opt=N'><strong>어학 성적조회</strong></a> &nbsp;
+                <img src="https://info.kw.ac.kr/webnote/images/ball.gif" width=18 height=11><a href='/webnote/submajor/submajor.php?layout_opt=N'><strong>복수/부/심화전공신청조회</strong></a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+
+
+                <br><b><font color='#0000FF'>※ 2019학년도 1학기 수강지도(전자승인)이 완료되었습니다.</font></b>
+
+
+            </td>
+        </tr>
+    </table>
+    <table width=750 align='center' border=0>
+        <tr>
+            <td>
+                <b><font color='#0000FF'>※ 당해학기 재수강 과목의 기 이수한 과목은 성적마감과 동시에 삭제되며, 기존 이수과목의 성적은 '등급(재수강)'로 표기됨</font></b>
+            </td>
+        </tr>
+    </table>
+    <table width=750 align='center' border=1 cellpadding='3' cellspacing=0 bordercolorlight='#CCCCCC' bordercolordark='#FFFFFF'>
+
+
+        <tr align=center>
+            <th colspan=9 bgcolor='#F0F0F0' height=30>
+                2019학년도
+                1학기
+            </th>
+        </tr>
+        <tr class='bgtable1' height=30 bgcolor="#CCCCCC">
+            <th width='90px'>학정번호</th>
+            <th>과목명</th>
+            <th width='130px'>개설학과</th>
+            <th width='30px'>이수<br />구분</th>
+            <th width='30px'>학점</th>
+            <th>성적</th>
+            <th>인증구분</th>
+            <th width='40px'>재수강<br />여부</th>
+            <th width='55px'>재수강이후<br />삭제여부</th>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H000-2-4969-02<br></td>
+            <td height=27>&nbsp;공학수학1<br></td>
+            <td height=27>&nbsp;소프트웨어융합대학공통<br></td>
+            <td height=27 align=center>기필<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>D+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>0000-2-3029-03<br></td>
+            <td height=27>&nbsp;인터넷활용<br></td>
+            <td height=27>&nbsp;전체공통<br></td>
+            <td height=27 align=center>교선<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>A+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H030-2-5409-01<br></td>
+            <td height=27>&nbsp;웹프로그래밍<br></td>
+            <td height=27>&nbsp;소프트웨어학부<br></td>
+            <td height=27 align=center>전선<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>B+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H030-2-3403-02<br></td>
+            <td height=27>&nbsp;고급프로그래밍<br></td>
+            <td height=27>&nbsp;소프트웨어학부<br></td>
+            <td height=27 align=center>전선<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>A+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H030-2-8484-02<br></td>
+            <td height=27>&nbsp;리눅스활용실습<br></td>
+            <td height=27>&nbsp;소프트웨어학부<br></td>
+            <td height=27 align=center>전필<br></td>
+            <td height=27 align=center>2<br></td>
+            <td height=27 align=center>B+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <tr align=center>
+            <th colspan=9 bgcolor='#F0F0F0' height=30>
+                2018학년도
+                2학기
+            </th>
+        </tr>
+        <tr class='bgtable1' height=30 bgcolor="#CCCCCC">
+            <th width='90px'>학정번호</th>
+            <th>과목명</th>
+            <th width='130px'>개설학과</th>
+            <th width='30px'>이수<br />구분</th>
+            <th width='30px'>학점</th>
+            <th>성적</th>
+            <th>인증구분</th>
+            <th width='40px'>재수강<br />여부</th>
+            <th width='55px'>재수강이후<br />삭제여부</th>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H030-1-4626-01<br></td>
+            <td height=27>&nbsp;대학수학및연습2<br></td>
+            <td height=27>&nbsp;소프트웨어학부<br></td>
+            <td height=27 align=center>기선<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>F <br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H030-1-8297-02<br></td>
+            <td height=27>&nbsp;컴퓨팅사고<br></td>
+            <td height=27>&nbsp;소프트웨어학부<br></td>
+            <td height=27 align=center>교필<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>D0<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H000-1-3362-05<br></td>
+            <td height=27>&nbsp;대학영어<br></td>
+            <td height=27>&nbsp;소프트웨어융합대학공통<br></td>
+            <td height=27 align=center>교필<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>B+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>0000-1-1618-01<br></td>
+            <td height=27>&nbsp;축구<br></td>
+            <td height=27>&nbsp;전체공통<br></td>
+            <td height=27 align=center>교선<br></td>
+            <td height=27 align=center>1<br></td>
+            <td height=27 align=center>A+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H030-1-2957-01<br></td>
+            <td height=27>&nbsp;공학설계입문<br></td>
+            <td height=27>&nbsp;소프트웨어학부<br></td>
+            <td height=27 align=center>기선<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>A0<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>0000-1-5914-02<br></td>
+            <td height=27>&nbsp;공학적의사소통<br></td>
+            <td height=27>&nbsp;전체공통<br></td>
+            <td height=27 align=center>교선<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>C+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H030-1-5714-01<br></td>
+            <td height=27>&nbsp;고급C프로그래밍및설계<br></td>
+            <td height=27>&nbsp;소프트웨어학부<br></td>
+            <td height=27 align=center>기필<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>B+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <tr align=center>
+            <th colspan=9 bgcolor='#F0F0F0' height=30>
+                2018학년도
+                1학기
+            </th>
+        </tr>
+        <tr class='bgtable1' height=30 bgcolor="#CCCCCC">
+            <th width='90px'>학정번호</th>
+            <th>과목명</th>
+            <th width='130px'>개설학과</th>
+            <th width='30px'>이수<br />구분</th>
+            <th width='30px'>학점</th>
+            <th>성적</th>
+            <th>인증구분</th>
+            <th width='40px'>재수강<br />여부</th>
+            <th width='55px'>재수강이후<br />삭제여부</th>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>0000-1-8876-01<br></td>
+            <td height=27>&nbsp;경제와경영<br></td>
+            <td height=27>&nbsp;전체공통<br></td>
+            <td height=27 align=center>교선<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>P <br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>0000-1-8128-01<br></td>
+            <td height=27>&nbsp;광운인되기<br></td>
+            <td height=27>&nbsp;전체공통<br></td>
+            <td height=27 align=center>교필<br></td>
+            <td height=27 align=center>1<br></td>
+            <td height=27 align=center>P <br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H000-1-3415-02<br></td>
+            <td height=27>&nbsp;대학화학및실험1<br></td>
+            <td height=27>&nbsp;소프트웨어융합대학공통<br></td>
+            <td height=27 align=center>기필<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>A0<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H000-1-4628-02<br></td>
+            <td height=27>&nbsp;기초수학및연습<br></td>
+            <td height=27>&nbsp;소프트웨어융합대학공통<br></td>
+            <td height=27 align=center>기선<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>A0<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H030-1-0019-01<br></td>
+            <td height=27>&nbsp;C프로그래밍<br></td>
+            <td height=27>&nbsp;소프트웨어학부<br></td>
+            <td height=27 align=center>교필<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>A+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H030-1-4625-01<br></td>
+            <td height=27>&nbsp;대학수학및연습1<br></td>
+            <td height=27>&nbsp;소프트웨어학부<br></td>
+            <td height=27 align=center>기선<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>B+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+        <!-- 성적출력 -->
+        <tr bgcolor='#FFFFFF'>
+            <td align='center'>H000-1-1077-02<br></td>
+            <td height=27>&nbsp;영어회화<br></td>
+            <td height=27>&nbsp;소프트웨어융합대학공통<br></td>
+            <td height=27 align=center>교필<br></td>
+            <td height=27 align=center>3<br></td>
+            <td height=27 align=center>B+<br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+            <td height=27 align=center><br></td>
+        </tr>
+
+
+    </table><br>
+
+    <!-- 본문 끝 -->
+
+
+</body>
+</html>

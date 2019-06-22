@@ -1,0 +1,2629 @@
+﻿<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+    <title>:: KwangWoon University U-Learning System ::</title>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="/images/kw_favicon.ico">>
+    <style type="text/css">
+        BODY {
+            FONT-SIZE: 9px;
+            COLOR: #333333;
+            LINE-HEIGHT: normal;
+            FONT-FAMILY: "±¼¸²","µ¸¿ò","tahoma","dotum","verdana";
+            TEXT-DECORATION: none
+        }
+
+        TABLE {
+            FONT-SIZE: 12px;
+            COLOR: #333333;
+            LINE-HEIGHT: normal;
+            FONT-FAMILY: "±¼¸²","µ¸¿ò","tahoma";
+            TEXT-DECORATION: none
+        }
+
+        A:link {
+            FONT-SIZE: 12px;
+            COLOR: #333333;
+            FONT-STYLE: normal;
+            FONT-FAMILY: "±¼¸²","µ¸¿ò","tahoma";
+            TEXT-DECORATION: none
+        }
+
+        A:visited {
+            FONT-SIZE: 12px;
+            COLOR: #333333;
+            FONT-STYLE: normal;
+            FONT-FAMILY: "±¼¸²","µ¸¿ò","tahoma";
+            TEXT-DECORATION: none
+        }
+
+        A:hover {
+            FONT-SIZE: 12px;
+            COLOR: #333333;
+            FONT-STYLE: normal;
+            FONT-FAMILY: "±¼¸²","µ¸¿ò","tahoma";
+            TEXT-DECORATION: none
+        }
+
+        A:active {
+            FONT-SIZE: 12px;
+            COLOR: #006699;
+            FONT-STYLE: normal;
+            FONT-FAMILY: "±¼¸²","µ¸¿ò","tahoma";
+            TEXT-DECORATION: none
+        }
+
+        .Board {
+            FONT-WEIGHT: bolder;
+            COLOR: #333333;
+            TEXT-DECORATION: none
+        }
+
+        .Title {
+            FONT-WEIGHT: bolder;
+            COLOR: #333333;
+            TEXT-DECORATION: none
+        }
+
+        .TableField01 {
+            PADDING-LEFT: 27px;
+            FONT-WEIGHT: bolder;
+            BACKGROUND-IMAGE: url(/_images/_icon/main_menu.gif);
+            COLOR: #7b705a;
+            HEIGHT: 25px
+        }
+
+        .TableField02 {
+            PADDING-LEFT: 27px;
+            BACKGROUND-IMAGE: url(/_images/_icon/sub_menu.gif);
+            HEIGHT: 23px
+        }
+
+        .TableTop01 {
+            PADDING-LEFT: 20px;
+            BORDER-LEFT: #ffffff 1px solid;
+            COLOR: #303030;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 27px;
+            BACKGROUND-COLOR: #f7f7f7
+        }
+
+        .TableTop02 {
+            PADDING-LEFT: 20px;
+            BORDER-LEFT: #e4e4e4 1px solid;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 27px
+        }
+
+        .TableBottom01 {
+            PADDING-LEFT: 20px;
+            BORDER-LEFT: #ffffff 1px solid;
+            COLOR: #303030;
+            HEIGHT: 27px;
+            BACKGROUND-COLOR: #f7f7f7
+        }
+
+        .TableBottom02 {
+            PADDING-LEFT: 20px;
+            BORDER-LEFT: #e4e4e4 1px solid
+        }
+
+        .adminboard_title {
+            PADDING-RIGHT: 0px;
+            BORDER-TOP: #ffffff 1px solid;
+            PADDING-LEFT: 0px;
+            FONT-WEIGHT: bolder;
+            PADDING-BOTTOM: 0px;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 32px;
+            BACKGROUND-COLOR: #f8f8f8;
+            TEXT-ALIGN: center
+        }
+
+        .adminboard_subject {
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 26px
+        }
+
+        A.intra:link {
+            COLOR: #333333;
+            FONT-FAMILY: ±¼¸², Arial;
+            TEXT-DECORATION: none
+        }
+
+        A.intra:active {
+            COLOR: #333333;
+            FONT-FAMILY: ±¼¸², Arial;
+            TEXT-DECORATION: none
+        }
+
+        A.intra:visited {
+            COLOR: #333333;
+            FONT-FAMILY: ±¼¸², Arial;
+            TEXT-DECORATION: none
+        }
+
+        A.intra:hover {
+            COLOR: #cc6600;
+            FONT-FAMILY: ±¼¸², Arial;
+            TEXT-DECORATION: underline
+        }
+
+        .intra {
+            CURSOR: hand;
+            COLOR: #333333;
+            FONT-FAMILY: ±¼¸², Arial
+        }
+
+        .TCL_left {
+            BORDER-RIGHT: #dddddd 1px solid;
+            PADDING-LEFT: 10px;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #dddddd 1px solid;
+            HEIGHT: 26px
+        }
+
+        .TCL_center {
+            BORDER-RIGHT: #dddddd 1px solid;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #dddddd 1px solid;
+            HEIGHT: 26px;
+            TEXT-ALIGN: center
+        }
+
+        .TCL_right {
+            BORDER-RIGHT: #dddddd 1px solid;
+            PADDING-RIGHT: 10px;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #dddddd 1px solid;
+            HEIGHT: 26px;
+            TEXT-ALIGN: right
+        }
+
+        .TCR_left {
+            PADDING-LEFT: 10px;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #dddddd 1px solid;
+            HEIGHT: 26px
+        }
+
+        .TCR_center {
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #dddddd 1px solid;
+            HEIGHT: 26px;
+            TEXT-ALIGN: center
+        }
+
+        .TCR_right {
+            PADDING-RIGHT: 10px;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #dddddd 1px solid;
+            HEIGHT: 26px;
+            TEXT-ALIGN: right
+        }
+
+        .TCC_left {
+            PADDING-LEFT: 10px;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #dddddd 1px solid;
+            HEIGHT: 26px
+        }
+
+        .LM_left {
+            PADDING-LEFT: 20px;
+            PADDING-BOTTOM: 5px;
+            PADDING-TOP: 5px
+        }
+
+        .TableStyleATop01 {
+            BORDER-LEFT: #ffffff 1px solid;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 30px;
+            BACKGROUND-COLOR: #f7f7f7;
+            TEXT-ALIGN: center
+        }
+
+        .TableStyleATop02 {
+            BORDER-LEFT: #e4e4e4 1px solid;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 30px;
+            BACKGROUND-COLOR: #f7f7f7;
+            TEXT-ALIGN: center
+        }
+
+        .TableStyleAContents01 {
+            BORDER-LEFT: #ffffff 1px solid;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 26px;
+            TEXT-ALIGN: center
+        }
+
+        .TableStyleAContents02 {
+            BORDER-LEFT: #e4e4e4 1px solid;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 26px;
+            TEXT-ALIGN: center
+        }
+
+        .TableStyleBTop01 {
+            BORDER-LEFT: #ffffff 1px solid;
+            PADDING-TOP: 3px;
+            HEIGHT: 31px;
+            BACKGROUND-COLOR: #f3f4f5
+        }
+
+        .TableStyleBTop02 {
+            BORDER-LEFT: #f3f4f5 1px solid;
+            PADDING-TOP: 3px;
+            HEIGHT: 31px;
+            BACKGROUND-COLOR: #f3f4f5
+        }
+
+        .TableStyleBContents01 {
+            PADDING-LEFT: 10px;
+            BORDER-LEFT: #ffffff 1px solid;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 26px
+        }
+
+        .TableStyleBContents02 {
+            PADDING-LEFT: 10px;
+            BORDER-LEFT: #e4e4e4 1px solid;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 26px
+        }
+
+        .TableStyleCTop01 {
+            BORDER-LEFT: #ffffff 1px solid;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 30px;
+            BACKGROUND-COLOR: #f7f7f7;
+            TEXT-ALIGN: center
+        }
+
+        .TableStyleCTop02 {
+            BORDER-LEFT: #e4e4e4 1px solid;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 30px;
+            BACKGROUND-COLOR: #f7f7f7;
+            TEXT-ALIGN: center
+        }
+
+        .TableStyleCContents01 {
+            BORDER-LEFT: #ffffff 1px solid;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 26px;
+            TEXT-ALIGN: center
+        }
+
+        .TableStyleCContents02 {
+            PADDING-LEFT: 10px;
+            BORDER-LEFT: #e4e4e4 1px solid;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #e4e4e4 1px solid;
+            HEIGHT: 26px
+        }
+
+        .padding_T {
+            PADDING-TOP: 20px
+        }
+
+        .padding_ST {
+            PADDING-TOP: 10px
+        }
+
+        .padding_B {
+            PADDING-BOTTOM: 20px
+        }
+
+        .padding_SB {
+            PADDING-BOTTOM: 10px
+        }
+
+        .padding_title {
+            PADDING-BOTTOM: 5px
+        }
+
+        .padding_SR {
+            PADDING-RIGHT: 10px
+        }
+
+        .padding_R {
+            PADDING-RIGHT: 20px
+        }
+
+        .padding_menu {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 0px;
+            PADDING-BOTTOM: 20px;
+            PADDING-TOP: 10px
+        }
+
+        .TTL_blueT {
+            BORDER-RIGHT: #0099cc 1px solid;
+            PADDING-TOP: 1px;
+            BORDER-BOTTOM: #0099cc 1px solid;
+            HEIGHT: 3px;
+            BACKGROUND-COLOR: #0099cc;
+            TEXT-ALIGN: center
+        }
+
+        .TTL_blueL {
+            BORDER-RIGHT: #eeeeee 1px solid;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #dddddd 1px solid;
+            HEIGHT: 30px;
+            BACKGROUND-COLOR: #f7f7f7;
+            TEXT-ALIGN: center
+        }
+
+        .TTL_blueS {
+            BORDER-RIGHT: #eeeeee 1px solid;
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #dddddd 1px solid;
+            HEIGHT: 26px;
+            BACKGROUND-COLOR: #f7f7f7;
+            TEXT-ALIGN: center
+        }
+
+        .TTR_blueL {
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #eeeeee 1px solid;
+            HEIGHT: 30px;
+            BACKGROUND-COLOR: #dddddd;
+            TEXT-ALIGN: center
+        }
+
+        .TTR_blueS {
+            PADDING-TOP: 2px;
+            BORDER-BOTTOM: #eeeeee 1px solid;
+            HEIGHT: 26px;
+            BACKGROUND-COLOR: #dddddd;
+            TEXT-ALIGN: center
+        }
+
+        .TTL_menuL {
+            BORDER-RIGHT: #e5e5e5 1px solid;
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 10px;
+            PADDING-BOTTOM: 0px;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #e5e5e5 1px solid;
+            HEIGHT: 29px
+        }
+
+        .TTL_menuC {
+            BORDER-RIGHT: #e5e5e5 1px solid;
+            PADDING-TOP: 3px;
+            BORDER-BOTTOM: #e5e5e5 1px solid;
+            TEXT-ALIGN: center
+        }
+
+        .TTL_menuR {
+            BORDER-RIGHT: #e5e5e5 1px solid;
+            PADDING-RIGHT: 6px;
+            PADDING-LEFT: 0px;
+            PADDING-BOTTOM: 0px;
+            PADDING-TOP: 0px;
+            BORDER-BOTTOM: #e5e5e5 1px solid;
+            TEXT-ALIGN: right
+        }
+
+        .TTR_menuL {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 15px;
+            PADDING-BOTTOM: 0px;
+            PADDING-TOP: 5px;
+            BORDER-BOTTOM: #e5e5e5 1px solid
+        }
+
+        .TTR_menuL2 {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 20px;
+            PADDING-BOTTOM: 0px;
+            PADDING-TOP: 6px;
+            BORDER-BOTTOM: #e5e5e5 1px solid;
+            HEIGHT: 27px
+        }
+
+        .TTR_menuC {
+            BORDER-BOTTOM: #e5e5e5 1px solid;
+            TEXT-ALIGN: center
+        }
+
+        .TTR_menuLT {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 20px;
+            FONT-WEIGHT: bolder;
+            PADDING-BOTTOM: 0px;
+            CURSOR: hand;
+            COLOR: #333333;
+            PADDING-TOP: 5px;
+            BORDER-BOTTOM: #e5e5e5 1px solid;
+            HEIGHT: 27px
+        }
+
+        .TTR_menuLT2 {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 5px;
+            PADDING-BOTTOM: 3px;
+            PADDING-TOP: 4px;
+            BORDER-BOTTOM: #e5e5e5 1px solid
+        }
+
+        .TTR_menuLT3 {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 18px;
+            PADDING-BOTTOM: 0px;
+            PADDING-TOP: 2px;
+            solid:
+        }
+
+        .TTR_menuLN {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 20px;
+            FONT-WEIGHT: bolder;
+            PADDING-BOTTOM: 0px;
+            COLOR: #333333;
+            PADDING-TOP: 5px;
+            BORDER-BOTTOM: #e5e5e5 1px solid;
+            HEIGHT: 27px
+        }
+
+        .TTR_menuLN2 {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 5px;
+            PADDING-BOTTOM: 3px;
+            PADDING-TOP: 4px;
+            BORDER-BOTTOM: #e5e5e5 1px solid
+        }
+
+        .TTR_menuLN3 {
+            PADDING-RIGHT: 0px;
+            PADDING-LEFT: 18px;
+            PADDING-BOTTOM: 3px;
+            PADDING-TOP: 2px;
+            solid:
+        }
+
+        BODY {
+            SCROLLBAR-FACE-COLOR: #cfcfcf;
+            SCROLLBAR-SHADOW-COLOR: #595959;
+            SCROLLBAR-3DLIGHT-COLOR: #595959;
+            SCROLLBAR-ARROW-COLOR: #ffffff;
+            SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+            SCROLLBAR-BASE-COLOR: #cfcfcf;
+            BACKGROUND-COLOR: transparent
+        }
+
+        IMG {
+            BORDER-RIGHT: 0px;
+            BORDER-TOP: 0px;
+            BORDER-LEFT: 0px;
+            BORDER-BOTTOM: 0px
+        }
+
+        .bgtable1 {
+            FONT-SIZE: 12px;
+            COLOR: #333333;
+            BACKGROUND-COLOR: #edf1f3
+        }
+
+
+
+
+
+        .select_sel {
+            font-size: 9pt;
+            color: #b75f69;
+            border: 1px solid #7f9db9;
+            Background-color: dad7d5;
+            width: 132px;
+        }
+
+        .info_txt {
+            font-size: 9pt;
+            color: #ffffff;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 8px;
+        }
+
+        BODY {
+            MARGIN: 0;
+        }
+    </style>
+    <script language="javascript">
+        function MM_swapImgRestore() { //v3.0
+            var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+        }
+
+        /*
+        function MM_preloadImages() { //v3.0
+          var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+            var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+            if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+        }
+        */
+
+        function MM_findObj(n, d) { //v4.01
+            var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+                d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+            if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+            for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+            if(!x && d.getElementById) x=d.getElementById(n); return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+                if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+        }
+
+
+
+
+
+
+
+
+
+        // 좌측메뉴 슬라이딩 - 예전 소스
+        function slide_old(Id, interval, to){
+            var obj = document.getElementById(Id);
+            var H, step = 1000;
+
+            if (obj == null){
+                return;
+            }
+
+            if (to == undefined) { // user clicking
+                if (obj._slideStart == true){
+                    return;
+                }
+
+                if (obj._expand == true) {
+                    to = 0;
+                    obj.style.overflow = "hidden";
+                }
+                else{
+                    slide.addId(Id);
+                    for(var i=0; i < slide.objects.length; i++) {
+                        if (slide.objects[i].id != Id && slide.objects[i]._expand == true) {
+                            slide(slide.objects[i].id);
+                        }
+                    }
+
+                    obj.style.height = "";
+                    obj.style.overflow = "";
+                    obj.style.display = "block";
+                    to = obj.offsetHeight;
+                    obj.style.overflow = "hidden";
+                    obj.style.height = "1px";
+                }
+                obj._slideStart = true;
+            }
+
+            step = ((to > 0) ? 1:-1) * step;
+
+            interval = ((interval==undefined)?1:interval);
+            //obj.style.height = (H=((H=(isNaN(H=parseInt(obj.style.height))?0:H))+step<0)?0:H+step)+"px";
+
+            H = parseInt(obj.style.height);
+            H = isNaN(H)? 0:H;
+            H = (H+step<0)? 0:H+step;
+            H = (H>to)? to:H;
+            obj.style.height = H + "px";
+
+            if (H <= 0) {
+                obj.style.display = "none";
+                obj.style.overflow = "hidden";
+                obj._expand = false;
+                obj._slideStart = false;
+            }
+            else if (to > 0 && H >= to) {
+                obj.style.display = "block";
+                obj.style.overflow = "visible";
+                obj.style.height = H + "px";
+                obj._expand = true;
+                obj._slideStart = false;
+            }
+            else {
+                setTimeout("slide('"+Id+"' , "+interval+", "+to+");", interval);
+            }
+        }
+
+
+
+
+
+        // 좌측메뉴 슬라이딩 - 2007.12.28 수정
+        function slide(Id, interval, to){
+            var obj = document.getElementById(Id);
+            var H, step = 1000;
+
+            if(obj == null){
+                return;
+            }
+
+            if(to == undefined){ // user clicking
+                if(obj._slideStart){
+                    return;
+                }
+
+                if(obj._expand){
+                    to = 0;
+                    obj.style.display = "none";
+                    obj.style.overflow = "hidden";
+                }
+                else{
+                    slide.addId(Id);
+                    for(var i=0; i<slide.objects.length; i++){
+                        if(slide.objects[i].id != Id && slide.objects[i]._expand){
+                            slide(slide.objects[i].id);
+                        }
+                    }
+
+                    obj.style.height = "";
+                    obj.style.overflow = "";
+                    obj.style.display = "block";
+                    to = obj.offsetHeight;
+                    obj.style.overflow = "hidden";
+                    obj.style.height = "1px";
+                }
+                obj._slideStart = true;
+            }
+
+            step = ((to > 0) ? 1:-1) * step;
+
+            interval = (interval==undefined)? 1:interval;
+            //obj.style.height = (H=((H=(isNaN(H=parseInt(obj.style.height))?0:H))+step<0)?0:H+step)+"px";
+
+            H = parseInt(obj.style.height);
+            H = isNaN(H)? 0:H;
+            H = (H+step<0)? 0:H+step;
+            H = (H>to)? to:H;
+
+            obj.style.height = H + "px";
+
+            if(H <= 0){
+                obj.style.display = "none";
+                obj.style.overflow = "hidden";
+                obj._expand = false;
+                obj._slideStart = false;
+            }
+            else{
+                //obj.style.display = "block";
+                obj.style.display = "";
+                obj.style.overflow = "visible";
+                //obj.style.height = H + "px";
+                obj._expand = true;
+                obj._slideStart = false;
+            }
+
+            if(interval == 1 && to == 1){
+                slide.addId(Id);
+            }
+        }
+
+        slide.objects = new Array();
+
+        slide.addId = function(Id){
+            for (var i=0; i < slide.objects.length; i++) {
+                if (slide.objects[i].id == Id){
+                    return true;
+                }
+            }
+            slide.objects[slide.objects.length] = document.getElementById(Id);
+        }
+
+
+        // 좌측메뉴 초기화 - 2007.08.21
+        function initLeftMenu(main_menu, sub_menu){
+            //slide("leftSub_" + main_menu);
+            slide("leftSub_" + main_menu, 1, 1);
+
+            if(sub_menu != "" && sub_menu != "00"){
+                obj = document.getElementById("leftSub_" + main_menu + "_" + sub_menu);
+            }
+            else{
+                obj = document.getElementById("leftMain_" + main_menu);
+            }
+
+            if(obj != null){
+                obj.style.color = "#CC6600";
+            }
+        }
+
+
+        // 좌측메뉴 초기화(POMS 전용) - 2007.08.21
+        function initLeftMenu_POMS(main_menu, sub_menu){
+            //slide("leftSub_" + main_menu);
+            slide("leftSub_" + main_menu, 1, 1);
+
+            if(sub_menu != "" && sub_menu != "00"){
+                obj = document.getElementById("leftSub_" + main_menu + "_" + sub_menu);
+                obj_parent = document.getElementById("leftMain_" + main_menu);
+
+                obj.src = obj.src_on;
+                obj.src_out = obj.src_on;
+                obj_parent.src = obj_parent.src_on;
+                obj_parent.src_out = obj_parent.src_on;
+            }
+            else if(main_menu != "" && main_menu != "00"){
+                obj = document.getElementById("leftMain_" + main_menu);
+                obj.src = obj.src_on;
+            }
+        }
+
+
+        // 문자열 길이를 byte단위로 구함 - 한글 한자는 2byte로 계산
+        function strlen(str){
+            var len = str.length;
+            var han = 0;
+            var res = 0;
+
+            for(i=0;i<len;i++) {
+                var a=str.charCodeAt(i);
+                if(a>128)
+                    han++;
+            }
+            res = (len-han) + (han*2);
+
+            return res;
+        }
+
+
+
+        // flashWrite(파일경로, 가로, 세로, 아이디, 배경색, 윈도우모드)
+        function flashWrite(url,w,h,id,bg,win){
+            // 플래시 코드 정의
+            var flashStr=
+            "<object classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0' width='"+w+"' height='"+h+"' id='"+id+"' align='middle'>"+
+            "<param name='movie' value='"+url+"' />"+
+            "<param name='wmode' value='"+win+"' />"+
+            "<param name='menu' value='false' />"+
+            "<param name='quality' value='high' />"+
+            "<param name='bgcolor' value='"+bg+"' />"+
+            "<embed src='"+url+"' wmode='"+win+"' menu='false' quality='high' bgcolor='"+bg+"' width='"+w+"' height='"+h+"' name='"+id+"' align='middle' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' />"+
+            "</object>";
+
+            // 플래시 코드 출력
+            document.write(flashStr);
+        }
+
+
+
+        // 크레듀 My Blog 창 띄우기
+        function goCreduMyBlog(c_gubun_code){
+            var strUrl = "http://info2.kw.ac.kr/servlet/controller.eportfolio.MainServlet?p_userid=12007006&p_gubun_code="+c_gubun_code;
+            window.open(strUrl , "openPortfolio", "toolbar=yes,location=yes,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no, width = 1024, height = 768, top=50, left=50");
+        }
+
+
+
+        // 크레듀 일정/쪽지 페이지 이동
+        function goCreduSchedule(c_gubun_code, p_kwLoginType){
+            var strUrl = "http://info2.kw.ac.kr/servlet/controller.homepage.MainServlet?p_gate=univ&p_process=main&p_page=myinfo&p_kwLoginType="+p_kwLoginType+"&gubun_code="+c_gubun_code;
+            location.href = strUrl;
+        }
+
+
+
+
+        // 팝업 띄우기
+        function open_popup(w_url, w_name, w_width, w_height, w_align, w_scroll){
+            var w_left;
+            var w_top;
+
+            switch(w_align){
+                // 좌측 상단
+                case "topleft":
+                case "lefttop":
+                case "tl":
+                case "lt":
+                    w_left = 0;
+                    w_top = 0;
+                    break;
+
+                    // 우측 상단
+                case "topright":
+                case "righttop":
+                case "tr":
+                case "rt":
+                    w_left = screen.width - w_width;
+                    w_top = 0;
+                    break;
+
+                    // 좌측 하단
+                case "bottomleft":
+                case "leftbottom":
+                case "bl":
+                case "lb":
+                    w_left = 0;
+                    w_top = screen.height - w_height - 80;
+                    break;
+
+                    // 우측 하단
+                case "bottomright":
+                case "rightbottom":
+                case "br":
+                case "rb":
+                    w_left = screen.width - w_width - 80;
+                    w_top = screen.height - w_height - 80;
+                    break;
+
+                    // 중앙 - 기본값
+                case "center":
+                case "c":
+                default:
+                    w_left = (screen.width - w_width) / 2;
+                    w_top = (screen.height - w_height) / 2;
+                    break;
+            }
+
+            var w_option = "width=" + w_width + ",height=" + w_height + ",left=" + w_left + ",top=" + w_top;
+
+            // 스크롤바 유무 설정
+            if(w_scroll == "Y" || w_scroll == "y"){
+                w_option = w_option + ",scrollbars=yes";
+            }
+
+            return window.open(w_url, w_name, w_option);
+        }
+
+
+
+        // 로그인 팝업 띄우기
+        function open_login(redirect_url){
+            open_popup("/webnote/login/login1.php?redirect_url="+redirect_url, "win_login", 300, 167, "c");
+        }
+
+
+        // 인증서 로그인 팝업 띄우기
+        function open_pki_login(redirect_url, gubun_code, member_no){
+            // 사용자 구분 인자가 설정되지 않은 경우 "" 로 초기화
+            if(typeof(gubun_code) == "undefined"){
+                gubun_code = "";
+            }
+
+            // 개인번호 인자가 설정되지 않은 경우 "" 로 초기화
+            if(typeof(member_no) == "undefined"){
+                member_no = "";
+            }
+            open_popup("/webnote/login/pki_login.php?redirect_url="+redirect_url+"&gubun_code="+gubun_code+"&member_no="+member_no, "win_pki_login", 600, 520, "c");
+        }
+
+
+        // 인증서 등록 팝업 띄우기
+        function open_pki_register(redirect_url, gubun_code, member_no){
+            // 사용자 구분 인자가 설정되지 않은 경우 "" 로 초기화
+            if(typeof(gubun_code) == "undefined"){
+                gubun_code = "";
+            }
+
+            // 개인번호 인자가 설정되지 않은 경우 "" 로 초기화
+            if(typeof(member_no) == "undefined"){
+                member_no = "";
+            }
+            open_popup("/webnote/login/pki_login.php?act_opt=register&redirect_url="+redirect_url+"&gubun_code="+gubun_code+"&member_no="+member_no, "win_pki_login", 600, 520, "c");
+        }
+    </script>
+    <Script language='javascript' src="/jsp/include/prototype.js"></Script>
+    <script>document.domain="kw.ac.kr";</script>
+    <Script type="text/javascript">
+if (/MSIE/.test(navigator.userAgent)) {
+  document.onreadystatechange = callResizeFrame;
+}
+
+function callResizeFrame() {
+  try {
+    if (parent!=this) {
+      top.M.resizeFrame();
+    }
+  }catch (e) {}
+}
+    </Script>
+</HEAD>
+<Script language='javascript'>
+var KwuObject = Class.create();
+KwuObject.prototype = {
+    initialize: function(form) {
+        this.form = form;
+        this.grcode = "";
+        this.gate = "";
+        this.year = "";
+        this.subjseq = "";
+        this.subj = "";
+        this.class_ = "";
+        this.userid = "";
+        this.olduserid = "";
+        this.auth = "";
+        this.oldYear = "";
+        this.oldSubjseq = "";
+        this.reloadCount = 0;
+        this.navStr = "";
+
+        this.arrSubjCode = {};
+    },
+    resizeFrame: function() {
+        //$("content_").style.visibility = "";
+        var min_h = 600;
+
+        var oIFrame = document.getElementById("content_");
+
+        try {
+
+          var oDoc = oIFrame.contentDocument || oIFrame.contentWindow.document;
+
+          if (/MSIE/.test(navigator.userAgent)) {
+            var frmHeight = oDoc.body.scrollHeight;
+          } else {
+            var s = oDoc.body.appendChild(document.createElement('DIV'))
+            s.style.clear = 'both';
+
+            var frmHeight = s.offsetTop;
+            s.parentNode.removeChild(s);
+          }
+
+          if (frmHeight < min_h) frmHeight = min_h;
+
+          oIFrame.style.height = frmHeight+10;
+
+        } catch (e) { }
+    },
+    setSubjCode: function(strYear, strSubj) {
+
+        if (this.year=="") {
+            this.year = strYear.split(",")[0];
+            this.subjseq  = strYear.split(",")[1];
+            this.subj = strSubj.split(",")[0];
+            this.class_  = strSubj.split(",")[1];
+
+        }
+
+        this.arrSubjCode[strYear] = strSubj;
+    },
+  getSubjCode: function() {
+    var strTmp = "<select name='s_yearsubjseq' onChange='top.M.changeYear(this.form);'>";
+    strTmp += "<option value=''>년도/학기를 선택하여 주십시오";
+
+    try {
+        var baseYear = (this.year=="") ? "" : this.year+","+this.subjseq;
+        for (var key in this.arrSubjCode) {
+            var year = key.split(",")[0];
+            var subjseq  = key.split(",")[1];
+            if (baseYear=="") {
+                baseYear = key;
+                this.year = year;
+                this.subjseq = subjseq;
+            }
+            var strSelected = "";
+            if (baseYear == key) {
+                strSelected = " selected";
+                if (this.reloadCount == 0) this.navStr = "<b>" + this.year + "년도 " + this.subjseq + "학기</b>";
+            }
+            strTmp += "<option value='"+key+"'"+strSelected+">"+year+"년도 "+subjseq+"학기";
+        }
+        strTmp += "</select> &#160;";
+    }
+    catch (e) {}
+
+    strTmp += "<select name='s_subjclass' onChange='top.M.changeSubj(this.form);'>";
+    strTmp += "<option value=''>과목을 선택하여 주십시오";
+
+    var viewInfo = "";
+    try {
+        var strbaseSubj = (this.subj=="") ? "" : this.subj+","+this.class_;
+        var arrSubj = this.arrSubjCode[baseYear].split("|");
+        for (var i=0; i<arrSubj.length-1; i++) {
+            var strValue = arrSubj[i].split(",")[0]+","+arrSubj[i].split(",")[1];
+            var strText = arrSubj[i].split(",")[2];
+            if (strbaseSubj=="") {
+                strbaseSubj = strValue;
+                this.subj = arrSubj[i].split(",")[0];
+                this.class_ = arrSubj[i].split(",")[1];
+            }
+            var strSelected = (strbaseSubj==strValue) ? " selected" : "";
+            if(" selected" == strSelected){
+              viewInfo = "<b>과목정보:" + strText + "</b><br>";
+            }
+
+            strTmp += "<option value='"+strValue+"'"+strSelected+">"+strText;
+        }
+    }
+    catch (e) {}
+
+
+    strTmp += "</select> &nbsp;";
+    strTmp += "<a href=\"javascript:top.M.submit()\"><IMG src=\"/images/COMMON/user/btn/go_b.gif\" border=\"0\" align=\"absmiddle\"></a> &nbsp;&nbsp;";
+    //strTmp += "<br>";
+    //strTmp += "<b>[과목정보 : " + viewInfo + "]</b>";
+    //strTmp = this.navStr + viewInfo + strTmp;
+    strTmp = viewInfo + strTmp;
+
+    return strTmp;
+  },
+    changeYear: function(formObj) {
+        var strValue = formObj.s_yearsubjseq.value;
+
+        this.year = strValue.split(",")[0];
+        this.subjseq  = strValue.split(",")[1];
+        this.subj = "";
+        this.class_ = "";
+
+        this.reloadCount++;
+
+        parent.content_.$("d_yearsubj").innerHTML = this.getSubjCode();
+    },
+    changeSubj: function(formObj) {
+        var strValue = formObj.s_subjclass.value;
+
+        if (strValue!="") {
+            this.subj = strValue.split(",")[0];
+            this.class_  = strValue.split(",")[1];
+        }
+        this.setForm();
+
+        //if (this.auth =="T") whenTopGo();
+        //else this.form.submit();
+        this.form.submit();
+    },
+    setForm: function() {
+        this.form.p_grcode.value=this.grcode;
+        this.form.p_gate.value=this.gate;
+        this.form.p_subj.value=this.subj;
+        this.form.p_year.value=this.year;
+        this.form.p_subjseq.value=this.subjseq;
+        this.form.p_class.value=this.class_;
+        this.form.p_userid.value=this.userid;
+    },
+    submit: function() {
+        this.reloadCount = 0;
+        this.setForm();
+        this.form.submit();
+    },
+    goMain: function() {
+        whenTopGo();
+    },
+    goUrl: function(strUrl, targetType) {
+
+        if (strUrl=="") return;
+
+        var strTarget = "content_";
+        if (targetType!="")  strTarget  =  targetType;
+
+        this.form = document.form1;
+        this.form.target=strTarget;
+        this.form.action=strUrl;
+        this.form.submit();
+
+        if (targetType!="")  this.form.target="content_";
+    }
+};
+</Script>
+<Script type="text/javascript">
+function whenTopGo(){
+    M.form.target="_self";
+    M.form.action="/servlet/controller.homepage.MainServlet";
+    M.form.p_process.value="main";
+    M.form.submit();
+}
+function goAdminPage_() {
+    var openWinAdmin = window.open("/servlet/controller.homepage.MainServlet?p_process=openAdminPage","KWU_AdminOpenPage",'scrollbars=yes,status=yes, width=1000,height=768,scrollbars=no,resizable=no, top=0, left=0');
+    openWinAdmin.focus();
+}
+function goAdminPage() {
+    var v_auth = M.form.p_auth.value;
+    if (v_auth=="P" || v_auth=="T" || v_auth=="S") {
+        M.form.target="_self";
+        M.form.action="/servlet/controller.homepage.MainServlet";
+        M.form.p_process.value="authChange";
+        M.form.submit();
+    }else{
+        var openWinAdmin = window.open("/servlet/controller.homepage.MainServlet?p_process=openAdminPage","KWU_AdminOpenPage",'scrollbars=yes,status=yes, width=1000,height=768,scrollbars=no,resizable=no, top=0, left=0');
+        openWinAdmin.focus();
+    }
+}
+function goPortfolio2() {
+    M.form.action = "/servlet/controller.eportfolio.MainServlet/"+M.userid;
+    M.form.target = "openPortfolio";
+    M.form.p_process.value="mainList";
+    M.form.p_userid.value=M.userid;
+    window.open("" , "openPortfolio", "toolbar=yes,location=yes,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no, width = 1024, height = 768, top=50, left=50");
+    M.form.submit();
+}
+function goPortfolio() {
+/*
+    alert('준비중 입니다.');
+    return;
+*/
+
+    M.form.action = "/servlet/controller.eportfolio.MainServlet";
+    M.form.target = "openPortfolio";
+    M.form.p_process.value="mainList";
+    M.form.p_userid.value=M.userid;
+    window.open("" , "openPortfolio", "toolbar=yes,location=yes,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no, width = 1024, height = 768, top=50, left=50");
+    M.form.submit();
+
+}
+
+function goPortfolio_() {
+/*
+    alert('준비중 입니다.');
+    return;
+*/
+
+    M.form.action = "/servlet/controller.eportfolio.MainServlet";
+    M.form.target = "openPortfolio";
+    M.form.p_process.value="mainList";
+    M.form.p_userid.value=M.userid;
+    window.open("" , "openPortfolio", "toolbar=yes,location=yes,directories=no,status=yes,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no, width = 1024, height = 768, top=50, left=50");
+    M.form.submit();
+
+}
+
+function setSubMenu(subType) {
+    $("d_myinfo").style.display = "none";
+    $("d_learning").style.display = "none";
+    $("d_forum").style.display = "none";
+    $("d_service").style.display = "none";
+    if (subType=="myinfo") {
+        $("d_abeek").style.display = "none";
+        $("d_myinfo").style.display = "";
+        M.goUrl('/servlet/controller.mypage.MyPageScheduleUserServlet?p_process=ScheduleMonth&p_grcode=N000003','');
+    } else if (subType=="learning") {
+        $("d_learning").style.display = "";
+        if (M.auth=="P" || M.auth=="T") {
+          M.goUrl('/servlet/controller.homepage.KwuMainServlet?p_process=openProf&p_grcode='+M.grcode,'');
+        }else if (M.auth=="S") {
+          M.goUrl('/servlet/controller.homepage.KwuMainServlet?p_process=openStu&p_grcode='+M.grcode,'');
+        }else{
+          M.goUrl('/servlet/controller.learn.NoticeStuServlet?p_process=listPage&p_grcode='+M.grcode,'');
+        }
+    } else if (subType=="forum") {
+        $("d_forum").style.display = "";
+        M.goUrl('/servlet/controller.learn.ForumStuServlet?p_process=listPage','');
+    } else if (subType=="service") {
+        $("d_service").style.display = "";
+        M.goUrl('/servlet/controller.service.NoticeUserServlet?p_process=listPage&p_grcode='+M.grcode,'');
+    }
+}
+</Script>
+<BODY>
+    <form name="form1" method="post">
+        <input type="hidden" name="p_process">
+        <input type="hidden" name="p_gate">
+        <input type="hidden" name="p_grcode">
+        <input type="hidden" name="p_subj">
+        <input type="hidden" name="p_year">
+        <input type="hidden" name="p_subjseq">
+        <input type="hidden" name="p_class">
+        <input type="hidden" name="p_userid">
+        <input type="hidden" name="p_page">
+        <input type="hidden" name="gubun_code" value="11">
+        <input type="hidden" name="p_tutor_name">
+
+
+
+        <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="50">
+                    <table width="1000" border="0" cellspacing="0" cellpadding="0">
+                        <colgroup>
+                            <col width="210" />
+                            <col width="790" />
+                        </colgroup>
+                        <tr>
+                            <td align="center"><a href="https://info.kw.ac.kr/" onfocus="javascript:blur();"><img src="https://info.kw.ac.kr/include/images/logo.gif" width="165" height="50"></a></td>
+                            <td valign="top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="25">
+                                            <table width="790" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td align="right" valign="bottom">
+                                                        <!--<a href="https://info.kw.ac.kr/iframe/bbs_renewal_bug.php"><img src="https://info.kw.ac.kr/include/images/top_bug.gif" width="69" height="13" border="0" align="absmiddle"></a>&nbsp;-->
+                                                        <a href="https://www.kw.ac.kr/index.do" target="_blank"><img src="https://info.kw.ac.kr/include/images/top_home.gif" width="97" height="13" border="0" align="absmiddle"></a>&nbsp;
+                                                        <a href="https://info.kw.ac.kr/webnote/login/logout.php?indexUrl=https%3A%2F%2Finfo.kw.ac.kr%2F"><img src="https://info.kw.ac.kr/include/images/top_logout.gif" width="50" height="13" border="0" align="absmiddle"></a>
+                                                        <!--<a href="#"><img src="https://info.kw.ac.kr/include/images/top_login.gif" width="50" height="13" border="0" align="absmiddle"></a>-->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table width="790" border="0" cellpadding="0" cellspacing="0" background="https://info.kw.ac.kr/include/images/menu_02.gif">
+                                                <tr>
+                                                    <td width="2"><img src="https://info.kw.ac.kr/include/images/menu_01.gif" width="2" height="45"></td>
+
+                                                    <!-- °­ÀÇÁ¾ÇÕÁ¤º¸ -->
+                                                    <td width="136" align="center"><a href="https://info2.kw.ac.kr/servlet/controller.homepage.MainServlet?p_gate=univ&p_process=main&p_page=learning&gubun_code=11" onfocus="javascript:blur();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image32','','https://info.kw.ac.kr/include/images/menu_ccon_01.gif',1)"><img src="https://info.kw.ac.kr/include/images/menu_cc_01.gif" name="Image32" width="102" height="36" border="0"></a></td>
+                                                    <td width="2" align="center"><img src="https://info.kw.ac.kr/include/images/menu_bar.gif" width="2" height="45"></td>
+
+                                                    <!-- ÇÐÀû/µî·Ï/»ó´ã°ü¸® -->
+                                                    <td width="151" align="center"><a href="https://info.kw.ac.kr/webnote/sel_dept/index.php" onfocus="javascript:blur();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image27','','https://info.kw.ac.kr/include/images/menu_aaon_07.gif',1)"><img src="https://info.kw.ac.kr/include/images/menu_aa_07.gif" name="Image27" width="130" height="36" border="0"></a></td>
+                                                    <td width="2" align="center"><img src="https://info.kw.ac.kr/include/images/menu_bar.gif" width="2" height="45"></td>
+
+                                                    <!-- Áö½ÄÆ÷·³ -->
+                                                    <td width="130" align="center"><a href="https://info2.kw.ac.kr/servlet/controller.homepage.MainServlet?p_gate=univ&p_process=main&p_page=forum&gubun_code=11" onFocus="javascript:blur();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image34','','https://info.kw.ac.kr/include/images/menu_ccon_06.gif',1)"><img src="https://info.kw.ac.kr/include/images/menu_cc_06.gif" name="Image34" width="81" height="36" border="0"></a></td>
+                                                    <td width="2" align="center"><img src="https://info.kw.ac.kr/include/images/menu_bar.gif" width="2" height="45"></td>
+
+                                                    <!-- Ä¿¹Â´ÏÆ¼ -->
+                                                    <td width="130" align="center"><a href="https://info2.kw.ac.kr/servlet/controller.community.CmuIndexServlet?p_gate=univ&gubun_code=11" onfocus="javascript:blur();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image35','','https://info.kw.ac.kr/include/images/menu_ccon_07.gif',0)"><img src="https://info.kw.ac.kr/include/images/menu_cc_07.gif" name="Image35" width="81" height="36" border="0"></a></td>
+                                                    <td width="2" align="center"><img src="https://info.kw.ac.kr/include/images/menu_bar.gif" width="2" height="45"></td>
+
+                                                    <!-- ÇàÁ¤¼­ºñ½º -->
+                                                    <td width="114" align="center"><a href="https://info.kw.ac.kr/webnote/soldier/sol_junip_detail.php" onfocus="javascript:blur();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image36','','https://info.kw.ac.kr/include/images/menu_ccon_05.gif',1)"><img src="https://info.kw.ac.kr/include/images/menu_cc_05.gif" name="Image36" width="81" height="36" border="0"></a></td>
+                                                    <td width="2" align="center"><img src="https://info.kw.ac.kr/include/images/menu_bar.gif" width="2" height="45"></td>
+
+                                                    <!-- ¼­ºñ½º¼¾ÅÍ -->
+                                                    <td width="107" align="center"><a href="https://info2.kw.ac.kr/servlet/controller.homepage.MainServlet?p_gate=univ&p_process=main&p_page=service&gubun_code=11" onfocus="javascript:blur();" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('image37','','https://info.kw.ac.kr/include/images/menu_ccon_08.gif',1)"><img src="https://info.kw.ac.kr/include/images/menu_cc_08.gif" name="Image37" width="90" height="36" border="0"></a></td>
+                                                    <td width="2"><img src="https://info.kw.ac.kr/include/images/menu_03.gif" width="2" height="45"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td height="85">
+
+
+                    <Script language='javascript'>
+				function setMyInfo() {
+					if ($("d_myinfo")==null) {
+						whenTopGo();
+						return;
+					}
+
+					$("d_myinfo").style.display = "";
+					$("d_learning").style.display = "none";
+
+					top.M.goUrl('/servlet/controller.mypage.MyPageScheduleUserServlet?p_process=ScheduleMonth');
+				}
+                    </Script>
+                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                        <TBODY>
+                            <TR>
+                                <TD align=middle width=210 height=85>
+                                    <TABLE height=78 cellSpacing=0 cellPadding=0 width=196 background="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/leftmenu.gif" border=0>
+                                        <TR>
+                                            <TD align="center">
+                                                <table width="179" border="0" cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <td class="info_txt">학부생 (2018203008)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info_txt">
+                                                            <a href="javascript:goPortfolio();"><img src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/bu_blog.gif" border="0" alt="나의 포트폴리오" /></a>
+
+
+                                                            <a href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/personal/h_address.php?layout_opt=N','');"><img src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/bu_my.gif" border="0" alt="개인정보수정" /></a>
+
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td bgcolor="#a8b3be" height="1px"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info_txt">
+
+                                                            <a href="javascript:setSubMenu('myinfo');"><img src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/bu_dayplan.gif" border="0" alt="일정및쪽지RSS" /></a>
+
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </TD>
+                                        </TR>
+                                    </TABLE>
+                                </TD>
+                                <TD valign="top" style="padding-top:4px;"><img src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/subtop_totalinfo.gif"></TD>
+                            </TR>
+                        </TBODY>
+                    </TABLE>
+                </td>
+            </tr>
+            <tr>
+                <td height="100%" valign="top">
+
+
+
+
+
+
+                    <!--table  width="1000" height="100%" border="0" cellspacing="0" cellpadding="0"-->
+                    <table width="1000" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="210" valign="top" align="middle">
+                                <TABLE cellSpacing=0 cellPadding=0 width=195 border=0>
+                                    <TBODY>
+                                        <TR>
+                                            <TD>
+                                                <TABLE cellSpacing=0 cellPadding=0 width=195 border=0>
+                                                    <TBODY>
+                                                        <TR>
+                                                            <TD>
+                                                                <IMG height=10 src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/leftmenu_01.gif">
+                                                            </TD>
+                                                        </TR>
+                                                        <TR>
+                                                            <TD align=middle background="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/leftmenu_04.gif">
+                                                                <div id="d_auth" style="display:none; width:170px; padding:0 0 5px 0;"></div>
+
+                                                                <!-- 메뉴부분 -->
+                                                                <TABLE cellSpacing=0 cellPadding=0 width=179 border=0>
+                                                                    <TBODY>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div id="d_myinfo" style="clear:both; display:none">
+                                                                                    <TABLE cellSpacing=0 cellPadding=0 width=179 border=0>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <table width="179" border="0" cellspacing="0" cellpadding="0">
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <img src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/left_day.gif">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2>
+                                                                                                <SPAN id=leftSub_01
+                                                                                                      style="DISPLAY:">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+                                                                                                            <!-- 서비스 센터 메뉴  가져오기 -->
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.mypage.MyPageScheduleUserServlet?p_process=ScheduleMonth&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_01_02">
+                                                                                                                            일정조회/등록
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.mypage.AddressUserServlet?p_process=addrListPage&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_01_03">
+                                                                                                                            주소록 관리
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.mypage.TempletUserServlet?p_process=templetListPage&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_01_04">
+                                                                                                                            템플릿 관리
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.mypage.MemoUserServlet?p_process=memoRecPage&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_01_05">
+                                                                                                                            받은 쪽지
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.mypage.MemoUserServlet?p_process=memoInsertPage&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_01_06">
+                                                                                                                            쪽지 발송
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.mypage.MemoUserServlet?p_process=memoSendPage&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_01_07">
+                                                                                                                            발송된 쪽지
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                    </TABLE>
+                                                                                </div>
+
+                                                                                <div id="d_learning" style="clear:both; display:">
+
+                                                                                    <TABLE cellSpacing=0 cellPadding=0 width=179 border=0>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <table width="179" border="0" cellspacing="0"
+                                                                                                       cellpadding="0">
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <img src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/left_totalinfo.gif">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+
+
+
+                                                                                        <!--
+                                                                                        3,36000000
+                                                                                        //-->
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('','');">
+                                                                                                    <SPAN class="intra" id="leftMain_36020000" onclick="javascript:slide('leftSub_36020000');">
+                                                                                                        강의계획서 조회
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_36020000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/lecture/h_lecture.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_36020000_02">강의계획서 조회
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/schedule/schedule.php','');">
+                                                                                                                        <SPAN id="leftSub_36020000_03">수업시간표
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+
+                                                                                        <!--
+                                                                                        3,36000000
+                                                                                        //-->
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('','');">
+                                                                                                    <SPAN class="intra" id="leftMain_36030000" onclick="javascript:slide('leftSub_36030000');">
+                                                                                                        학습지원실
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_36030000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.NoticeStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36030000_05">공지사항
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.AssPdsStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36030000_06">강의자료실
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.PdsStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36030000_07">학생자료실
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.QnAStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36030000_08">강의Q&A
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.DicProfServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36030000_09">용어사전
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+
+                                                                                        <!--
+                                                                                        3,36000000
+                                                                                        //-->
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('','');">
+                                                                                                    <SPAN class="intra" id="leftMain_36040000" onclick="javascript:slide('leftSub_36040000');">
+                                                                                                        온라인강의컨텐츠 보기
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_36040000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.ContentsLessonServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36040000_11">강의컨텐츠 보기
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.contents.normal.NormalCourseProfServlet?p_process=tagListPage','');">
+                                                                                                                        <SPAN id="leftSub_36040000_12">컨텐츠 태그검색
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/jsp/user/service/zu_Downloads_Program.jsp','');">
+                                                                                                                        <SPAN id="leftSub_36040000_13">온라인학습프로그램다운로드
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/jsp/user/service/pfcheck.jsp','');">
+                                                                                                                        <SPAN id="leftSub_36040000_14">온라인컨텐츠환경테스트
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.wibro.EStageClassStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36040000_15">e-Class 강의 복습
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+
+                                                                                        <!--
+                                                                                        3,36000000
+                                                                                        //-->
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('','');">
+                                                                                                    <SPAN class="intra" id="leftMain_36050000" onclick="javascript:slide('leftSub_36050000');">
+                                                                                                        온라인참여학습
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_36050000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.ReportStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36050000_17">과제제출
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.ProjectStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36050000_18">팀프로젝트
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.DebateStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36050000_19">토론참여
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.ExamPaperStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36050000_20">온라인시험 응시
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.ExamAnyPaperStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_36050000_21">수시퀴즈 응시
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.ProgressStuServlet?p_process=progress','');">
+                                                                                                                        <SPAN id="leftSub_36050000_22">온라인컨텐츠 진도현황 조회
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.learn.ActivityStuServlet?p_process=view','');">
+                                                                                                                        <SPAN id="leftSub_36050000_23">학습현황 조회
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('/servlet/controller.sulmun.SulmunPaperStuServlet?p_process=SulmunPaperListPage','');">
+                                                                                                                        <SPAN id="leftSub_36050000_24">설문참여
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/cdp/cdp_attendance_check.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_36050000_25">CDP출석내역
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/cdp/cdp_reserve_form.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_36050000_26">CDP 출석여부 설문조사
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+
+                                                                                        <!--
+                                                                                        3,36000000
+                                                                                        //-->
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('','');">
+                                                                                                    <SPAN class="intra" id="leftMain_36120000" onclick="javascript:slide('leftSub_36120000');">
+                                                                                                        수업평가/성적/장학 조회
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_36120000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/judge/student.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_36120000_28">수업평가
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/judge_open/','');">
+                                                                                                                        <SPAN id="leftSub_36120000_29">수업평가 결과 확인
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('성적.html','');">
+                                                                                                                        <SPAN id="leftSub_36120000_30">수강/성적 조회
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/class_order/order.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_36120000_31">석차조회
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/toeic/toeic.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_36120000_32">어학성적조회
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                            <TR>
+
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/janghak/janghak.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_36120000_33">장학조회
+                                                                                                                    </A>
+                                                                                                                </TD>
+
+                                                                                                            </TR>
+
+
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+
+                                                                                        <!--
+                                                                                        3,36000000
+                                                                                        //-->
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/student/program.php?layout_opt=N','');">
+                                                                                                    <SPAN class="intra" id="leftMain_36130000" onclick="javascript:slide('leftSub_36130000');">
+                                                                                                        수강신청 프로그램
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_36130000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY></TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+
+                                                                                        <!--
+                                                                                        3,36000000
+                                                                                        //-->
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/hgiveup/sugang_giveup01.php?layout_opt=N','');">
+                                                                                                    <SPAN class="intra" id="leftMain_36140000" onclick="javascript:slide('leftSub_36140000');">
+                                                                                                        수강포기 신청
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_36140000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY></TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+
+                                                                                        <!--
+                                                                                        3,36000000
+                                                                                        //-->
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/exchange/index.php?layout_opt=N','');">
+                                                                                                    <SPAN class="intra" id="leftMain_36180000" onclick="javascript:slide('leftSub_36180000');">
+                                                                                                        교류학점 신청
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_36180000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY></TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+
+                                                                                    </TABLE>
+
+
+
+
+
+
+                                                                                    <TABLE cellSpacing=0 cellPadding=0 width=179 border=0>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <table width="179" border="0" cellspacing="0"
+                                                                                                       cellpadding="0">
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <img src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/left_eng_info.gif">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('','');">
+                                                                                                    <SPAN class="intra" id="leftMain_99020000" onclick="javascript:slide('leftSub_99020000');">
+                                                                                                        학생(수강)상담
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_99020000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/counsel/suhak_plan_view.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_99020000_01">수학계획서 작성
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/counsel/counsel_list.php?skin_opt=abeek&layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_99020000_01">상담내역조회
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/abeek/junip_hakjum.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_99020000_01">전입생 학점인정 상담
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('','');">
+                                                                                                    <SPAN class="intra" id="leftMain_99060000" onclick="javascript:slide('leftSub_99060000');">
+                                                                                                        학습성과 성취도 평가
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_99060000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <!--<A class=intra href="javascript:alert('준비중입니다.');">-->
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/abeek/essay_list.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_99060000_01">에세이 보고서
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/abeek/before_survey_index.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_99060000_02">설문조사
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('','');">
+                                                                                                    <SPAN class="intra" id="leftMain_99030000" onclick="javascript:slide('leftSub_99030000');">
+                                                                                                        이수현황점검
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2 vAlign=top>
+                                                                                                <SPAN id=leftSub_99030000 style="DISPLAY: none">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:void(window.open('https://info.kw.ac.kr/webnote/sungjuk/confirm_abeek.php','KWeval','width=550,height=480,left=300,top=200'));">
+                                                                                                                        <SPAN id="leftSub_99030000_01">공학프로그램 이수현황점검
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/abeek/graduation_eval_pass_stu.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_99030000_02">공학프로그램 학습성과점검
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/abeek/cert_change_list.php?layout_opt=N','');">
+                                                                                                                        <SPAN id="leftSub_99030000_03">학위과정(프로그램) 변경
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/abeek/before_student_index.php','');">
+                                                                                                    <SPAN class="intra" id="leftMain_99040000" onclick="">
+                                                                                                        선수교과목 이수현황 조회
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN>
+                                                                                                <A class=intra href="javascript:top.M.goUrl('https://info.kw.ac.kr/webnote/bbs_hakbu/portfolio_list2.php?skin_opt=abeek&layout_opt=N','');">
+                                                                                                    <SPAN class="intra" id="leftMain_99050000" onclick="">
+                                                                                                        설계포트폴리오 조회
+                                                                                                    </SPAN>
+                                                                                                </A>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                    </TABLE>
+
+                                                                                </div>
+
+                                                                                <div id="d_forum" style="clear:both; display:none">
+                                                                                    <TABLE cellSpacing=0 cellPadding=0 width=179 border=0>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <table width="179" border="0" cellspacing="0" cellpadding="0">
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <img src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/left_forum.gif">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2>
+                                                                                                <SPAN id=leftSub_03
+                                                                                                      style="DISPLAY:">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+                                                                                                            <!--지식UCC 메뉴  가져오기 -->
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra
+                                                                                                                       href="javascript:top.M.goUrl('/servlet/controller.learn.ForumStuServlet?p_process=listPage','');">
+                                                                                                                        <SPAN id="leftSub_03_01">
+                                                                                                                            지식UCC
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                    </TABLE>
+                                                                                </div>
+
+                                                                                <div id="d_service" style="clear:both; display:none">
+                                                                                    <TABLE cellSpacing=0 cellPadding=0 width=179 border=0>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <table width="179" border="0" cellspacing="0" cellpadding="0">
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <img src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/left_service.gif">
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td height="10"></td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <TR>
+                                                                                            <TD class=TTR_menuLN2>
+                                                                                                <SPAN id=leftSub_04
+                                                                                                      style="DISPLAY:">
+                                                                                                    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                                                                        <TBODY>
+                                                                                                            <!-- 서비스 센터 메뉴  가져오기 -->
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra
+                                                                                                                       href="javascript:top.M.goUrl('/servlet/controller.service.NoticeUserServlet?p_process=listPage&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_04_01">
+                                                                                                                            공지사항
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra
+                                                                                                                       href="javascript:top.M.goUrl('/servlet/controller.service.DownloadsUserServlet?p_process=listPage&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_04_02">
+                                                                                                                            자료실
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra
+                                                                                                                       href="javascript:top.M.goUrl('/servlet/controller.service.FaqUserServlet?p_process=listPage&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_04_03">
+                                                                                                                            FAQ
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                            <TR>
+                                                                                                                <TD class=TTR_menuLN3>
+                                                                                                                    <A class=intra
+                                                                                                                       href="javascript:top.M.goUrl('/servlet/controller.sulmun.SulmunPaperStuCommonServlet?p_process=SulmunPaperListPage&p_grcode=N000003','');">
+                                                                                                                        <SPAN id="leftSub_04_04">
+                                                                                                                            Online Poll
+                                                                                                                        </SPAN>
+                                                                                                                    </A>
+                                                                                                                </TD>
+                                                                                                            </TR>
+
+                                                                                                        </TBODY>
+                                                                                                    </TABLE>
+                                                                                                </SPAN>
+                                                                                            </TD>
+                                                                                        </TR>
+                                                                                    </TABLE>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </TBODY>
+                                                                </TABLE>
+                                                                <!-- 메뉴부분끝 -->
+                                                                <SCRIPT type=text/javascript>
+                                            <!--
+                                                // 메뉴 초기화
+                                                //initLeftMenu("02", "01");
+                                            -->
+                                                                </SCRIPT>
+                                                            </TD>
+                                                        </TR>
+                                                        <TR>
+                                                            <TD background="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/leftmenu_04.gif">
+                                                                &nbsp;
+                                                            </TD>
+                                                        </TR>
+                                                        <TR>
+                                                            <TD>
+                                                                <img height=12
+                                                                     src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/leftmenu_05.gif"
+                                                                     width=197>
+                                                            </TD>
+                                                        </TR>
+                                                    </TBODY>
+                                                </TABLE>
+                                            </TD>
+                                        </TR>
+                                        <!-- 교수 교육조교 평가 배너 sycho 2012.10.23
+
+                                         -->
+                                        <!-- UI 의견수렴 배너 sycho 2012.12.04 ~ 12.25
+                                        <TR>
+                                            <TD height=10></TD>
+                                        </TR>
+                                        <TR>
+                                            <TD>
+                                            <div id="d_abeek" style="display:">
+
+                                            <a href="https://info.kw.ac.kr/webnote/abeek/" target="_blank">
+                                            <img src="/images/KOREAN/user/kw_univ/ui_banner.gif" width="194" height="65" border="0"> </a>
+
+                                            </div>
+                                            </TD>
+                                        </TR>
+                                        -->
+                                        <!-- 교과과정의견수렴 sycho 2016.04.04 ~ 04.15
+                                        <TR>
+                                            <TD height=10></TD>
+                                        </TR>
+                                        <TR>
+                                            <TD>
+                                                <div id="d_manage" style="display:">
+
+                                                    <a href="https://info.kw.ac.kr/webnote/poll_etc/2/index.php" target="_blank">
+                                                        <img src="/images/KOREAN/user/kw_univ/160331_left_banner.gif" width="194" height="65" border="0">
+                                                    </a>
+
+                                                </div>
+                                            </TD>
+                                        </TR>
+                                         -->
+                                        <!-- iT형 인재양성 통합관리시스템 배너 sycho 2016.05.02 -->
+                                        <TR>
+                                            <TD height=10></TD>
+                                        </TR>
+                                        <TR>
+                                            <TD>
+                                                <div id="d_manage" style="display:">
+
+                                                    <a href="https://info.kw.ac.kr/webnote/out_usercheck/injae_login.php" target="_blank">
+                                                        <img src="https://info.kw.ac.kr/images/itup_banner.gif" width="194" height="65" border="0">
+                                                    </a>
+
+                                                </div>
+                                            </TD>
+                                        </TR>
+
+                                        <TR>
+                                            <TD height=10></TD>
+                                        </TR>
+                                        <TR>
+                                            <TD>
+                                                <div id="d_manage" style="display:">
+
+                                                    <a href="https://info.kw.ac.kr/webnote/abeek/dream_index.php" target="_blank">
+                                                        <img src="https://info.kw.ac.kr/images/dream_banner.gif" width="194" height="65" border="0">
+                                                    </a>
+
+                                                </div>
+                                            </TD>
+                                        </TR>
+
+
+
+                                        <!-- 공학교육정보관리시스템 배너 삭제 sycho 2016.03.31 공학교육혁신센터2016-57
+                                            <TR>
+                                                <TD>
+                                                <div id="d_abeek" style="display:">
+
+                                                <a href="https://info.kw.ac.kr/webnote/abeek/" target="_blank"> <img
+                                                    src="/images/KOREAN/user/kw_univ/abeek_banner.gif"
+                                                    width="194" height="65" border="0"> </a>
+                                                </div>
+                                                </TD>
+                                            </TR>
+                                        -->
+                                        <TR>
+                                            <TD height=10></TD>
+                                        </TR>
+
+                                        <!-- talk banner  -->
+                                        <TR>
+                                            <TD>
+                                                <div id="d_abeek" style="display:">
+
+                                                    <a href="https://info.kw.ac.kr/talkrank/" target="_blank">
+                                                        <img src="/images/KOREAN/user/bnn/talkrank_left_banner.gif"
+                                                             width="194" height="65" border="0">
+                                                    </a>
+                                                </div>
+                                            </TD>
+                                        </TR>
+                                        <TR>
+                                            <TD height=10></TD>
+                                        </TR>
+
+                                        <!-- 경영대학 경력개발 포인트 시스템 배너 sycho. 2010.11.23 -->
+                                        <!-- 경영대학 요청으로 잠시 막음 sycho 2012.10.19
+                                        <TR>
+                                            <TD>
+                                                <div id="d_manage" style="display:">
+
+                                                    <a href="http://128.134.70.93" target="_blank">
+                                                        <img src="/images/KOREAN/user/kw_univ/banner_101123.gif" width="194" height="65" border="0">
+                                                    </a>
+
+                                                </div>
+                                            </TD>
+                                        </TR>
+                                        -->
+                                        <!-- 프로그램 개선 건의 kimdh 2011.09.26
+                                        <tr>
+                                            <td>
+                                                <div id="d_suggestion" style="display">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                         -->
+                                        <!-- 포트폴리오 -->
+                                        <TR>
+                                            <TD style="padding-top:10px;">
+
+                                                <a href="javascript:goPortfolio_()">&#160;</a>
+                                            </TD>
+                                        </TR>
+                                        <!--
+                                                        <TR>
+                                                            <TD height=10></TD>
+                                                        </TR>
+                                                        <TR>
+                                                            <TD>
+                                                                <a href="#">
+                                                                    <img src="/images/KOREAN/user/kw_univ/ban_help.gif" border="0">
+                                                                </a>
+                                                            </TD>
+                                                        </TR>
+                                                        <TR>
+                                                            <TD height=10></TD>
+                                                        </TR>
+                                        //-->
+                                        <!--
+                                                        <TR>
+                                                            <TD align=middle>
+                                                                <a href="https://info.kw.ac.kr/webnote/poll/poll_form.php?poll_no=2">
+                                                                    <img height=95 src="/images/KOREAN/user/kw_univ/k_banner.gif" width=194 border=0>
+                                                                </a></TD>
+                                                        </TR>
+
+                                        //-->
+                                    </TBODY>
+                                </TABLE>
+                                <!-- 좌측테이블끝 //-->
+                            </td>
+
+                            <!--td valign="top" height="100%"><TABLE cellSpacing=0 cellPadding=0 width="100%" height="100%" border=0-->
+                            <td valign="top">
+                                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                    <TBODY>
+                                        <TR>
+                                            <!--TD height="100%"><TABLE cellSpacing=0 cellPadding=0 width="100%" height="100%" border=0-->
+                                            <TD>
+                                                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                                                    <TBODY>
+                                                        <TR>
+                                                            <TD width=10 height=10>
+                                                                <IMG height=10
+                                                                     src="/images/KOREAN/user/kw_univ/box01.gif"
+                                                                     width=10>
+                                                            </TD>
+                                                            <TD background="/images/KOREAN/user/kw_univ/box02.gif"></TD>
+                                                            <TD width=10>
+                                                                <IMG height=10
+                                                                     src="/images/KOREAN/user/kw_univ/box03.gif"
+                                                                     width=10>
+                                                            </TD>
+                                                        </TR>
+                                                        <TR>
+                                                            <TD background="/images/KOREAN/user/kw_univ/box04.gif">
+                                                                &nbsp;
+                                                            </TD>
+                                                            <!--TD class="content_area" style="padding-top:25px;" height="100%" valign="top"-->
+                                                            <TD class="content_area" style="padding-top:25px;" valign="top">
+
+                                                                <Script type="text/javascript">
+var M = new KwuObject(document.forms.form1);
+M.grcode = "N000003";
+M.gate = "univ";
+M.userid = "2018203008UA";
+M.olduserid = "2018203008";
+M.auth = "S";
+M.subj = "U2019130290000032";
+M.year = "2019";
+M.subjseq = "1";
+M.class_ = "03";
+
+M.setForm();
+                                                                </Script>
+
+
+                                                                <Script type="text/javascript">
+    var strAuth = "S,학생|";
+    var strTmp = "<select name='p_auth' class='select_sel' style='width:140px;'>";
+    var arrAuth = strAuth.split("|");
+    var mgrIdx = 0;
+    var tutIdx = 0;
+    for (var idx=0; idx<arrAuth.length-1; idx++) {
+        var strSelected = (arrAuth[idx].split(",")[0]==M.auth) ? " selected" : "";
+        strTmp += "<option value='"+arrAuth[idx].split(",")[0]+"'"+strSelected+">"+arrAuth[idx].split(",")[1];
+        if (arrAuth[idx].split(",")[0]=="P" || arrAuth[idx].split(",")[0]=="T" || arrAuth[idx].split(",")[0]=="S") tutIdx++;
+        else mgrIdx++;
+    }
+    strTmp += "</select>";
+    strTmp += "&nbsp;<a href=\"javascript:goAdminPage()\"><IMG src=\"/images/COMMON/user/btn/btn_go.gif\" border=\"0\" align=\"absmiddle\"></a>";
+
+    if (mgrIdx>0 || tutIdx>1) {
+        $("d_auth").innerHTML = strTmp;
+        $("d_auth").style.display = "";
+    }
+                                                                </Script>
+
+
+
+                                                                <iframe id="content_" name="content_" src="" width="100%" height="600" frameborder="0" scrolling="auto" onload="M.resizeFrame()"></iframe>
+
+                                                                <Script type="text/javascript">
+function notice_getCookie( name ) {
+  var nameOfCookie = name + "=";
+  var x = 0;
+  while ( x <= document.cookie.length ) {
+    var y = (x+nameOfCookie.length);
+    if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+    if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+      endOfCookie = document.cookie.length;
+    return unescape( document.cookie.substring( y, endOfCookie ) );
+  }
+  x = document.cookie.indexOf( " ", x ) + 1;
+  if ( x == 0 ) break;
+  }
+  return ""
+}
+
+
+         M.setSubjCode('2019,1','U2019130290000032,03,[학부]인터넷활용 (03) - 김진수|U201913403H030022,02,[학부]고급프로그래밍 (02) - 진혜진|U201914969H000022,02,[학부]공학수학1 (02) - 조향감|U201915409H030012,01,[학부]웹프로그래밍 (01) - 서두옥|U201918484H030022,02,[학부]리눅스활용실습 (02) - 최민규|');
+
+         M.setSubjCode('2018,2','U2018216180000011,01,[학부]축구 (01) - 최경식|U201822957H030011,01,[학부]공학설계입문 (01) - 유황빈|U201823362H000051,05,[학부]대학영어 (05) - 김미연|U201824626H030011,01,[학부]대학수학및연습2 (01) - 김현미|U201825714H030011,01,[학부]고급C프로그래밍및설계 (01) - 한진섭|U2018259140000021,02,[학부]공학적의사소통 (02) - 장혜진|U201828297H030021,02,[학부]컴퓨팅사고 (02) - 최진희|');
+
+         M.setSubjCode('2018,1','U201810019H030011,01,[학부]C프로그래밍 (01) - 임재한|U201811077H000021,02,[학부]영어회화 (02) - 브라이언|U201813415H000021,02,[학부]대학화학및실험1 (02) - 최한|U201814625H030011,01,[학부]대학수학및연습1 (01) - 권윤기|U201814628H000021,02,[학부]기초수학및연습 (02) - 최윤철|U2018181280000011,01,[학부]광운인되기 (01) - 김서영|U2018188760000011,01,[학부]경제와경영 (01) - 송영출|');
+
+
+
+        setSubMenu("learning");
+
+
+
+
+                                                                </Script>
+
+                                                                <!-- 본문 끝 -->
+                                                            </TD>
+                                                            <TD background="/images/KOREAN/user/kw_univ/box06.gif">&nbsp;</TD>
+                                                        </TR>
+                                                        <TR>
+                                                            <TD height=10><IMG height=10 src="/images/KOREAN/user/kw_univ/box07.gif" width=10></TD>
+                                                            <TD background="/images/KOREAN/user/kw_univ/box08.gif"></TD>
+                                                            <TD><IMG height=10 src="/images/KOREAN/user/kw_univ/box09.gif" width=10></TD>
+                                                        </TR>
+                                                    </TBODY>
+                                                </TABLE>
+                                            </TD>
+                                        </TR>
+                                    </TBODY>
+                                </TABLE>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td height="72" style="padding:10px 0 2px 0;" align="left">
+                    <TABLE cellSpacing=0 cellPadding=0 width="1000" border=0>
+                        <TBODY>
+                            <TR>
+                                <TD align=right width=12><IMG height=72 src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/footer_01.gif" width=8></TD>
+                                <TD align=middle width=200 background="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/footer_02.gif"><IMG height=35 src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/footer_logo.gif" width=144></TD>
+                                <TD align=right width=780 background="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/footer_02.gif"><IMG height=37 src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/footer_04.gif" width=554 useMap=#map_footer></TD>
+                                <TD width=10><IMG height=72 src="https://info2.kw.ac.kr/images/KOREAN/user/kw_univ/footer_03.gif" width=10></TD>
+                            </TR>
+                        </TBODY>
+                    </TABLE>
+
+                    <MAP name=map_footer><AREA onfocus=javascript:blur(); shape=RECT alt="관리자에게 메일보내기" coords=405,0,550,20 href="mailto:webadmin@kw.ac.kr"></MAP>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+
+
+
+
+
+    <iframe style="width:0px;height:0px;" width="0" height="0" src="/jsp/session_reload.jsp"></iframe>
+    <font color="white"> :KOREAN</font>
+</BODY>
+</HTML>
